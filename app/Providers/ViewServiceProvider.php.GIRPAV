@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Providers;
+
+use idealcoms\eadmin\Repositories\Criteria\Catalog\Published;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
+
+class ViewServiceProvider extends ServiceProvider
+{
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot(DispatcherContract $events)
+    {
+        parent::boot($events);
+
+        if (!app()->runningInConsole()) {
+            $rangeRepository = $this->app->make('idealcoms\eadmin\Repositories\Catalog\BaseRangesRepository');
+            $familyRepository = $this->app->make('idealcoms\eadmin\Repositories\Catalog\BaseFamilyRepository');
+            $productRepository = $this->app->make('idealcoms\eadmin\Repositories\Catalog\BaseProductsRepository');
+
+            $rangeRepository->pushCriteria(new Published());
+            $familyRepository->pushCriteria(new Published());
+            $productRepository->pushCriteria(new Published());
+
+            $ranges = $rangeRepository->with(['translations'])->all();
+            $families = $familyRepository->with(['translations'])->all();
+            $products = $productRepository->with(['translations'])->all();
+
+            view()->share('menuRanges', $ranges);
+            view()->share('menuFamilies', $families);
+            view()->share('menuProducts', $products);
+        }
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+}
