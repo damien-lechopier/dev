@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "03181fa0e88736c5a43b58e53793c74e",
-    "content-hash": "0a2964f3a407fb33367dfe2744acd5f1",
+    "hash": "6390a1b4ec816d6f95d29fcc790bc660",
+    "content-hash": "63889a420037c19f9a3e0f1c00272d09",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -853,6 +853,62 @@
             "time": "2016-12-07 09:37:55"
         },
         {
+            "name": "kozz/laravel-guzzle-provider",
+            "version": "6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/urakozz/laravel-guzzle.git",
+                "reference": "f9609049c82e3e443ab156a6d485597b10181ec1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/urakozz/laravel-guzzle/zipball/f9609049c82e3e443ab156a6d485597b10181ec1",
+                "reference": "f9609049c82e3e443ab156a6d485597b10181ec1",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kozz\\Laravel\\": "src/",
+                    "Kozz\\Tests\\Laravel\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hongbo Tang",
+                    "email": "thbourlove@gmail.com"
+                },
+                {
+                    "name": "Yury Kozyrev",
+                    "email": "urakozz@gmail.com"
+                }
+            ],
+            "description": "Guzzle Service Provider for Laravel 5",
+            "keywords": [
+                "Guzzle",
+                "http",
+                "laravel"
+            ],
+            "time": "2015-06-03 09:26:54"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.2.45",
             "source": {
@@ -1118,6 +1174,55 @@
                 "storage"
             ],
             "time": "2017-01-30 17:41:17"
+        },
+        {
+            "name": "mailjet/mailjet-apiv3-php",
+            "version": "v1.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mailjet/mailjet-apiv3-php.git",
+                "reference": "dcf05767a69ad7b9c824f148435760d97bcdead7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mailjet/mailjet-apiv3-php/zipball/dcf05767a69ad7b9c824f148435760d97bcdead7",
+                "reference": "dcf05767a69ad7b9c824f148435760d97bcdead7",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0|~5.3",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mailjet": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mailjet",
+                    "email": "dev@mailjet.com",
+                    "homepage": "https://dev.mailjet.com"
+                }
+            ],
+            "description": "PHP wrapper for the Mailjet API",
+            "homepage": "https://github.com/mailjet/mailjet-apiv3-php/",
+            "keywords": [
+                "Mailjet",
+                "api",
+                "email",
+                "php",
+                "v3"
+            ],
+            "time": "2016-11-22 14:53:36"
         },
         {
             "name": "mcamara/laravel-localization",
@@ -1809,6 +1914,42 @@
                 "sorting"
             ],
             "time": "2016-09-25 14:52:29"
+        },
+        {
+            "name": "splitice/php-lua-serialize",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/splitice/php-lua-serialize.git",
+                "reference": "93491e8d744a43ed6f7406543418efc32ca62006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/splitice/php-lua-serialize/zipball/93491e8d744a43ed6f7406543418efc32ca62006",
+                "reference": "93491e8d744a43ed6f7406543418efc32ca62006",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Splitice": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "keywords": [
+                "lua",
+                "serialization"
+            ],
+            "time": "2015-11-21 13:07:20"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4834,6 +4975,7 @@
     "stability-flags": {
         "bestmomo/scafold": 20,
         "urodoz/truncate-html": 0,
+        "splitice/php-lua-serialize": 20,
         "idealcoms/eadmin-base": 20
     },
     "prefer-stable": false,

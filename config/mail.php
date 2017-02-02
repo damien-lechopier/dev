@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailjet'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'suivi@idealcoms.net', 'name' => null],
+    'from' => ['address' => 'd.lechopier@gmail.com', 'name' => null],
 
     /*
     |--------------------------------------------------------------------------

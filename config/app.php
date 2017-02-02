@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://www.thermoplongeurs-galvatek.com'),
+    'url' => env('APP_URL', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -171,6 +171,7 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
    		Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+    	Kozz\Laravel\Providers\Guzzle::class,
 
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
@@ -239,7 +240,8 @@ return [
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Image' => Intervention\Image\Facades\Image::class,
     	'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
-
+    	'Guzzle' => 'Kozz\Laravel\Facades\Guzzle::class',
+    		
         /** eadmin stuff */
         'NEWS'       => idealcoms\eadmin\Facades\NEWS::class,
         'Catalog'    => idealcoms\eadmin\Facades\Catalog::class,
