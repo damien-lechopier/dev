@@ -174,7 +174,10 @@ return [
     	Kozz\Laravel\Providers\Guzzle::class,
 
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
+		
+    	// Providers for connection with Google Services
+   		App\Providers\GoogleDriveServiceProvider::class,
+    		
         /**
          * idealcoms public folder change handler
          */

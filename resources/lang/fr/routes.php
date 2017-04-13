@@ -1,6 +1,7 @@
 <?php
 
     return [
+   		"dev" =>  "dev",
       	"entreprise" =>  "entreprise",
     	"type" =>  "type/{id}/{name}",
 	    	"type_1" => "solutions-par-type-d-installation",

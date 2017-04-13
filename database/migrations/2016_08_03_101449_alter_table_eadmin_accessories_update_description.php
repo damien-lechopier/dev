@@ -12,8 +12,12 @@ class AlterTableEadminAccessoriesUpdateDescription extends Migration
      */
     public function up()
     {
-        DB::statement('ALTER TABLE eadmin_accessories_translations MODIFY COLUMN description TEXT');
-
+        //DB::statement('ALTER TABLE eadmin_accessories_translations MODIFY COLUMN description TEXT');
+		
+    	Schema::table('eadmin_accessories_translations', function (Blueprint $table) {
+        	$table->text('description')->change();
+        });
+        
         Schema::table('eadmin_accessories', function ($table) {
             $table->dropColumn('status');
         });
@@ -31,8 +35,12 @@ class AlterTableEadminAccessoriesUpdateDescription extends Migration
      */
     public function down()
     {
-        DB::statement('ALTER TABLE eadmin_accessories_translations MODIFY COLUMN description VARCHAR(255)');
+        //DB::statement('ALTER TABLE eadmin_accessories_translations MODIFY COLUMN description VARCHAR(255)');
 
+    	Schema::table('eadmin_accessories_translations', function (Blueprint $table) {
+    		$table->string('description',255)->change();
+    	});
+    	
         Schema::table('eadmin_accessories', function ($table) {
             $table->dropColumn('status');
         });
