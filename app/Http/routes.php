@@ -30,10 +30,6 @@ Route::group(['middleware' => ['localeSessionRedirect', 'localizationRedirect'],
     	return view('pages.dev');
     }]);
     
-    Route::get('dev_test', function() {
-    	Storage::disk('google')->put('test.txt', 'Hello World');
-    });
-    
     
     Route::get(LaravelLocalization::transRoute('routes.entreprise'), ["as" => "entreprise", function () {
         return view('pages.entreprise');

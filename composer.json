@@ -32,7 +32,9 @@
 	"mailjet/mailjet-apiv3-php": "1.1.*",
 	"splitice/php-lua-serialize": "dev-master",
 	"idealcoms/eadmin-base": "dev-master",
-    "nao-pon/flysystem-google-drive": "~1.1"
+    "nao-pon/flysystem-google-drive": "~1.1",
+    "hesto/adminlte": "^1.0",
+    "nao-pon/elfinder-flysystem-driver-ext": "^1.0"
   },
   "require-dev": {
 	"fzaninotto/faker": "~1.4",

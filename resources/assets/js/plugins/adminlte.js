@@ -1,0 +1,11 @@
+require('jquery-ui');
+require('moment');
+require('datatables.net');
+require('datatables.net-bs');
+require('bootstrap-daterangepicker');
+require('bootstrap-timepicker');
+require('bootstrap-colorpicker');
+require('select2');
+require('jquery-slimscroll');
+require('fastclick');
+require('html5shiv');
