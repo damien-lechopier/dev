@@ -34,7 +34,8 @@
 	"idealcoms/eadmin-base": "dev-master",
     "nao-pon/flysystem-google-drive": "~1.1",
     "hesto/adminlte": "^1.0",
-    "nao-pon/elfinder-flysystem-driver-ext": "^1.0"
+    "nao-pon/elfinder-flysystem-driver-ext": "^1.0",
+    "laravel/cashier": "~6.0"
   },
   "require-dev": {
 	"fzaninotto/faker": "~1.4",

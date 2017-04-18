@@ -45,14 +45,17 @@ class DevController extends Controller
     	
     	
     	$file = $cloud->get('0B5STB9FA0apeN2QwMG9CZkZWRmc');
-    	$size = $cloud->size('0B5STB9FA0apeN2QwMG9CZkZWRmc');
+    	//$size = $cloud->size('0B5STB9FA0apeN2QwMG9CZkZWRmc');
     	//$path = $file->getRealPath();
     	//$url = $file->url('file1.jpg');
     	//$cloud->read($file);
-    	print_r($file->getName());
+    	
+    	print_r($file);
     	
     	// recup list documents du dossier
     	$datas = $cloud->allFiles();
+    	
+    	
     	
     	return view('pages.dev',[
     			'datas' => $datas,

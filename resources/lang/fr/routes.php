@@ -21,4 +21,5 @@
     	"calcul" => "calcul-de-puissance",
    		"actualites" => "actualites",
     	"contact" => "contactez-nous",
+    	"admin_home" => "admin",
     ];

@@ -1,6 +1,4 @@
-const elixir = require('laravel-elixir');
-
-require('laravel-elixir-vue-2');
+var elixir = require('laravel-elixir');
 
 /*
  |--------------------------------------------------------------------------
@@ -16,52 +14,95 @@ require('laravel-elixir-vue-2');
 var node_path = "./node_modules/";
 
 var paths = {
-    'public'            : 'public/',
-    'bootstrap'         : node_path + "bootstrap-sass/assets/",
-    'datarangepicker'   : node_path + "bootstrap-daterangepicker/",
-    'timepicker'        : node_path + "bootstrap-timepicker/",
-    'colorpicker'       : node_path + "bootstrap-colorpicker/",
-    'fontawesome'       : node_path + "font-awesome/",
-    'ionicons'          : node_path + "ionicons/",
-    'adminlte'          : node_path + "admin-lte/",
-    'datatables_bs'     : node_path + "datatables.net-bs/"
-
+		'node_modules_absolute': '../../../' + node_path,
+		'node_modules_relative': node_path,
+		'public_assets': 'public/assets/',
+		'resources_relative': 'resources/',
 };
 
-elixir(mix => {
+
+elixir(function(mix) {
     mix
-    .sass('admin.scss', 'resources/dist/css')
-    .sass('front.scss', 'resources/dist/css')
-    .sass('app.scss')
+    
+    // #################### STYLESHEETS ####################
+    
+	   .styles([
+				   paths.node_modules_absolute + "bootstrap/dist/css/bootstrap.min.css",
+				   paths.node_modules_absolute + "fancybox/dist/css/jquery.fancybox.css",
+				  ], 
+				  paths.public_assets + "css/front_plugins.css"
+			   )   
+	    
+	   .styles([
+	            	 "template.css",
+	                 "nav.css",
+	                 "pages.css",
+	                 
+	                 ],   paths.public_assets + "css/front_custom.css")
+	    
+	    .styles([
+				   paths.node_modules_absolute + "bootstrap-daterangepicker/daterangepicker.css",
+				   paths.node_modules_absolute + "bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css",
+				   paths.node_modules_absolute + "datatables.net-bs/css/dataTables.bootstrap.css",
+				   paths.node_modules_absolute + "admin-lte/dist/css/AdminLTE.min.css",
+				   paths.node_modules_absolute + "admin-lte/dist/css/skins/skin-blue.min.css",
+				  ], 
+				  paths.public_assets + "css/admin_plugins.css"
+			   )   
+	                 
+    // #################### SCRIPTS ####################
+        
+	   .scripts([
+	             // JQuery
+	             paths.node_modules_absolute + "jquery/dist/jquery.min.js",
+	             // JQuery migrate
+	             paths.node_modules_absolute + "jquery-migrate/dist/jquery-migrate.min.js",
+	             // JQuery UI
+	             // Désactivé car provoque une erreur avec Jquery
+	             //paths.node_modules_absolute + "jquery-ui/jquery-ui.js",
+	             // JQuery easing
+	             paths.node_modules_absolute + "jquery.easing/jquery.easing.min.js",
+	             // Bootstrap
+	             paths.node_modules_absolute + "bootstrap/dist/js/bootstrap.min.js",
+	             // Fancybox
+	             paths.node_modules_absolute + "fancybox/dist/js/jquery.fancybox.pack.js",
+	                 
+	          ],   
+	          paths.public_assets + "js/front_plugins.js"
+	          )
+	       
+	    
+	   // Custom scripts 
+	   .scripts([
+	            	"custom.js"
+		             ],   
+		             paths.public_assets + "js/front_custom.js"
+		          )
+	       
+	// #################### COPY ####################
+	       
+	   // ---------- Fonts ----------
+		       
+			// Fontawesome fonts
+		    .copy(paths.node_modules_relative + "font-awesome/fonts/", paths.public_assets +  'fonts')  
+		    
+		    // Ionicons fonts
+		    .copy(paths.node_modules_relative + "ionicons/dist/fonts/", paths.public_assets +  'fonts')  
+		    
+		    // Bootstrap fonts
+		    .copy(paths.node_modules_relative + "bootstrap-sass/assets/fonts/bootstrap/", paths.public_assets +  'fonts')  
+		       
+		    // Project fonts
+		    //.copy(paths.resources_relative + "assets/fonts", paths.public_assets +  'fonts')  
 
-    .webpack('admin.js', 'resources/dist/js')
-    .webpack('front.js', 'resources/dist/js')
-    .webpack('app.js')
+		       
+		// ---------- Images ----------
+		       
+		    // Fancybox img
+		    .copy(paths.node_modules_relative + "fancybox/dist/img", paths.public_assets +  'img')
+		    
+		      // Admin LTE img
+		    .copy(paths.node_modules_relative + "admin-lte/dist/img/", paths.public_assets +  'img/adminlte')
 
-    .copy(paths.fontawesome + 'fonts/', paths.public + 'fonts')
-    .copy(paths.ionicons + 'fonts/', paths.public + 'fonts')
-    .copy(paths.bootstrap + 'fonts/', paths.public + 'fonts')
-    .copy(paths.adminlte + 'dist/img/', paths.public + 'img/adminlte')
-
-    .styles([
-        './resources/dist/css/admin.css',
-        paths.timepicker + 'css/bootstrap-timepicker.min.css',
-        paths.colorpicker + 'dist/css/bootstrap-colorpicker.min.css',
-        paths.datatables_bs + 'css/dataTables.bootstrap.css',
-        paths.adminlte + 'dist/css/AdminLTE.min.css',
-        paths.adminlte + 'dist/css/skins/skin-blue.min.css'
-    ], paths.public + 'css/admin.css')
-
-    .styles([
-        './resources/dist/css/front.css',
-    ], paths.public + 'css/front.css')
-
-    .scripts([
-        './resources/dist/js/admin.js',
-        paths.adminlte + 'dist/js/app.min.js'
-    ], paths.public + 'js/admin.js')
-
-    .scripts([
-        './resources/dist/js/front.js',
-    ], paths.public + 'js/front.js');
+	       
 });

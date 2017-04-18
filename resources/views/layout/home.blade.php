@@ -11,20 +11,13 @@
 
 	{!! SEO::generate() !!}
 
-	<!-- Bootstrap -->
-	{!! Html::style('assets/css/bootstrap.css') !!}
+	<!-- Plugins -->
+	{!! Html::style('assets/css/front_plugins.css') !!}
 	
 	<!-- Custom style -->
-	{!! Html::style('assets/css/all.css') !!}
+	{!! Html::style('assets/css/front_custom.css') !!}
 	
-	<!-- Fancybox -->
-	{!! Html::style('assets/css/fancybox.css') !!}
-		
 	@yield('css')
-	
-
-	<!-- Fonts -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,18 +27,14 @@
 	<![endif]-->
 	
 	<!-- Scripts -->
-	{{ Html::script('assets/js/all.js') }}
+	{{ Html::script('assets/js/front_plugins.js') }}
 		
 	<!-- Fancybox -->
-	{{ Html::script('assets/js/fancybox.js') }}
+	{{ Html::script('assets/js/front_custom.js') }}
 	
 	<!-- Email ofuscator -->
 	{{ Html::script('https://cdn.rawgit.com/Propaganistas/Email-Obfuscator/master/assets/EmailObfuscator.js') }}
 	
-	
-	<!-- Scripts custom  -->
-	{{ Html::script('assets/js/custom.js') }}
-		
 	<script type="text/javascript">
 
 		var divLoader = '<p style="font-style:italic;text-align:center;"><img src="{{ asset('images/ajax-loader.gif') }}" alt="" style="position:relative;margin:20px;width:50px;50px;" /><br/>Recherche ...</p>';

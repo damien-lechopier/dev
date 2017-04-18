@@ -30,6 +30,10 @@ Route::group(['middleware' => ['localeSessionRedirect', 'localizationRedirect'],
     	return view('pages.dev');
     }]);
     
+    	Route::get(LaravelLocalization::transRoute('routes.admin_home'), ["as" => "admin_lte", function () {
+    		return view('admin.layout.layout');
+    	}]);
+    
     
     Route::get(LaravelLocalization::transRoute('routes.entreprise'), ["as" => "entreprise", function () {
         return view('pages.entreprise');
