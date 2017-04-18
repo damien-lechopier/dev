@@ -10,7 +10,6 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     
     {!! Html::style('assets/css/admin_plugins.css') !!}
-    {!! Html::style('assets/css/admin_custom.css') !!}
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,7 +19,6 @@
     <![endif]-->
     
     {{ Html::script('assets/js/admin_plugins.js') }}
-    {{ Html::script('assets/js/admin_custom.js') }}
     
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
