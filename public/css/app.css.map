@@ -1,1 +1,0 @@
-{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;;;;;;;;;EASE","file":"app.css","sourcesContent":["/*\n$typekit-green: \"#99cc00\"; \n$typekit-link-color: $typekit-green;\na {\n  color: $typekit-link-color;\n}\nbody{\n\tbackground-color:$typekit-link-color;\n}\n*/"],"sourceRoot":"/source/"}

@@ -29,15 +29,15 @@ elixir(function(mix) {
     
     // #################### SASS #########################
     
-    .sass('admin.scss', 'resources/dist/css')
-    .sass('front.scss', 'resources/dist/css')
-    .sass('app.scss')
+    .sass('admin.scss', public_path + 'css')
+    //.sass('front.scss', 'resources/dist/css')
+    //.sass('app.scss')
 	
     
     // #################### WEBPACK #########################
     
-    //.webpack('admin.js', 'resources/dist/js')
-    //.webpack('front.js', 'resources/dist/js')
+    .webpack('admin.js', public_path + 'js')
+    .webpack('front.js', public_path + 'js')
     //.webpack('app.js')
 
     
@@ -61,6 +61,7 @@ elixir(function(mix) {
 	    
 	     // ADMIN Plugins
 	    .styles([
+	    		   public_path +  'css/admin.css',
 				   paths.node_modules_absolute + "bootstrap-daterangepicker/daterangepicker.css",
 				   paths.node_modules_absolute + "bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css",
 				   paths.node_modules_absolute + "datatables.net-bs/css/dataTables.bootstrap.css",
@@ -103,10 +104,11 @@ elixir(function(mix) {
 	    
 		// ADMIN Plugins
 	          .scripts([
-	        	 // JQuery
-		         paths.node_modules_absolute + "jquery/dist/jquery.min.js",
-		         // JQuery migrate
-		         paths.node_modules_absolute + "jquery-migrate/dist/jquery-migrate.min.js",
+	        	  // JQuery
+		          paths.node_modules_absolute + "jquery/dist/jquery.min.js",
+		          // JQuery migrate
+		          paths.node_modules_absolute + "jquery-migrate/dist/jquery-migrate.min.js",
+	        	  public_path +  'js/admin.js',
 	        	  // Admin LTE
 	             paths.node_modules_absolute + "admin-lte/dist/js/app.min.js",
 	                 

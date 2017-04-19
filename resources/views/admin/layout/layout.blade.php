@@ -18,8 +18,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    {{ Html::script('assets/js/admin_plugins.js') }}
-    
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -441,5 +439,9 @@
 <!-- ./wrapper -->
 
 @yield('footer')
+
+
+ {{ Html::script('assets/js/admin_plugins.js') }}
+
 </body>
 </html>
